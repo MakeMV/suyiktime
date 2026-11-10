@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Саған арнаймын 💙</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Caveat:wght@400;600&family=Noto+Serif:wght@400;600&family=Noto+Sans:wght@400;600&display=swap">
+<style>
+:root{
+  --script:"Marck Script","Caveat","Noto Serif",cursive;--sky1:#eaf4ff;--sky2:#cfe5fb;--sky3:#a9cdf3;--deep:#4a7fb8;--ink:#2d4f7a;--glow:#ffffff;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;font-family:"Noto Sans",system-ui,sans-serif;color:var(--ink);
+  background:linear-gradient(170deg,var(--sky1) 0%,var(--sky2) 55%,var(--sky3) 100%);background-attachment:fixed;overflow-x:hidden}
+#sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 8px 2px #fff;animation:tw 3s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.2;transform:scale(.6)}50%{opacity:1;transform:scale(1.2)}}
+.fl{position:absolute;bottom:-40px;animation:rise linear forwards;opacity:.0}
+@keyframes rise{0%{opacity:0;transform:translateY(0) rotate(0)}10%{opacity:.7}100%{opacity:0;transform:translateY(-110vh) rotate(40deg)}}
+section{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px}
+.hidden{display:none!important}
+/* gate */
+.moon{width:110px;height:110px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,#e3f0ff 60%,#c4dcf7);
+  box-shadow:0 0 40px 18px rgba(255,255,255,.75),0 0 90px 40px rgba(150,195,245,.5);animation:float 6s ease-in-out infinite;margin-bottom:34px}
+@keyframes float{50%{transform:translateY(-12px)}}
+.card{width:min(440px,100%);padding:30px 26px;text-align:center;background:rgba(255,255,255,.6);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.9);border-radius:28px;box-shadow:0 14px 40px rgba(74,127,184,.22)}
+h1{font-family:var(--script);font-weight:400;font-size:1.8rem;line-height:1.4;margin:0 0 8px}
+.sub{margin:0 0 20px;font-size:.95rem;opacity:.8}
+.q{font-family:var(--script);font-size:1.35rem;line-height:1.5;margin:0 0 18px}
+input{width:100%;padding:14px 18px;font:inherit;font-size:1rem;text-align:center;color:var(--ink);background:#fff;
+  border:2px solid var(--sky2);border-radius:999px;outline:none;transition:border-color .2s,box-shadow .2s}
+input:focus{border-color:var(--deep);box-shadow:0 0 0 4px rgba(74,127,184,.18)}
+button{font:inherit;cursor:pointer;border:0;color:#fff;background:linear-gradient(135deg,#6aa2dc,#4a7fb8);border-radius:999px;
+  padding:13px 30px;font-weight:600;font-size:1rem;box-shadow:0 8px 20px rgba(74,127,184,.4);transition:transform .15s}
+button:hover{transform:translateY(-2px)}button:active{transform:scale(.96)}
+button:focus-visible,input:focus-visible{outline:3px solid #fff;outline-offset:2px}
+#go{margin-top:16px}
+#msg{min-height:1.4em;margin:12px 0 0;font-size:.92rem;color:#b2496b}
+.shake{animation:sh .45s}
+@keyframes sh{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+/* letter */
+#letter{justify-content:flex-start;padding-top:56px;padding-bottom:140px}
+.paper{width:min(640px,100%);padding:38px 30px;background:rgba(255,255,255,.72);backdrop-filter:blur(8px);
+  border:1px solid #fff;border-radius:30px;box-shadow:0 18px 50px rgba(74,127,184,.25);text-align:left;
+  animation:open 1.2s cubic-bezier(.2,.8,.2,1) both}
+@keyframes open{from{opacity:0;transform:translateY(40px) scale(.94)}to{opacity:1;transform:none}}
+.paper h2{font-family:var(--script);font-weight:400;font-size:2.1rem;text-align:center;margin:0 0 24px}
+.paper p{font-family:var(--script);font-size:1.3rem;line-height:1.75;margin:0 0 18px;opacity:0;transform:translateY(12px);transition:opacity 1.2s,transform 1.2s}
+.paper p.on{opacity:1;transform:none}
+.paper p.hl{text-align:center;font-size:1.5rem;color:var(--deep)}.paper p.end{text-align:center;margin-top:26px;margin-bottom:0}
+.paper p.end span{display:block;font-size:1.5rem;margin-top:6px;animation:beat 1.4s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.18)}}
+#kiss{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:5;font-size:1.15rem;padding:15px 34px;
+  background:linear-gradient(135deg,#8bb9ec,#4a7fb8);animation:pulse 2.4s ease-in-out infinite}
+#kiss:hover{transform:translateX(-50%) translateY(-2px)}#kiss:active{transform:translateX(-50%) scale(.95)}
+@keyframes pulse{50%{box-shadow:0 8px 34px rgba(74,127,184,.75)}}
+.k{position:fixed;z-index:9;pointer-events:none;bottom:-60px;animation:fly ease-out forwards}
+@keyframes fly{0%{opacity:0;transform:translate(0,0) scale(.5) rotate(0)}12%{opacity:1}100%{opacity:0;transform:translate(var(--dx),-115vh) scale(1.3) rotate(var(--r))}}
+#snd{position:fixed;top:max(14px,env(safe-area-inset-top,0px));right:14px;z-index:6;padding:10px 14px;font-size:1.1rem;background:rgba(255,255,255,.7);color:var(--deep);box-shadow:0 4px 14px rgba(74,127,184,.25)}
+@media (prefers-reduced-motion:reduce){.moon,.star,#kiss,.paper p.end span{animation:none}}
+</style>
+</head>
+<body>
+<div id="sky"></div>
+<button id="snd" class="hidden" aria-label="Музыка">🎵</button>
+
+<section id="gate">
+  <div class="moon"></div>
+  <div class="card" id="card">
+    <h1>Сүйіктім, саған арнап жасадым 💙</h1>
+    <p class="sub">Ішке кіру үшін бір сұраққа жауап бер</p>
+    <p class="q">Сені әлемде ең қатты жақсы көретін адамның есімі кім?</p>
+    <input id="ans" type="text" autocomplete="off" placeholder="Жауабыңды жаз..." aria-label="Жауап">
+    <button id="go">Ашу ✨</button>
+    <p id="msg" role="status"></p>
+  </div>
+</section>
+
+<section id="letter" class="hidden">
+  <div class="paper">
+    <h2>Саған арнаймын 💙</h2>
+    <p>Сүйіктіммм екеуміздің арамызда 1808 шақырым арақашықтық болса да бұл сайт екеуміздің жүректерімізді жақындатады деп сенемін.</p>
+    <p>Жалғызым білесіңба аспандағы ай қалай адасқан жолаушының жолына жарығын түсіріп үйіне жол көрсетсе сен де менің адасқан жүрегіме сәулеңді шашып жолымды тауып берген айымсың.</p>
+    <p>Сен менің өмірме мән мағына беріп мені әлемдегі ең бақытты адам еттің. Сені маған қосқаны үшін Аллаға сансыз шүкір етемін сүйіктім.</p>
+    <p class="hl">Сен менің жар дегенде жалғыз ғана еңңң ерке бопантаййй топантайымсыңңң.</p>
+    <p>Сүйіктііммм маған күш беретін сенсің, сенсіз мен осы күнгн дейін жете алмас едім деп санаймын, сол үшін қалайда жақсы өмірге жетуіміз үшін барымды саламын, ғашығымм жұмыс та болады бұйырса және онымен бірге подарка да қалаулар да болады, оған дейін осы кішкентай ғана сыйымды қабыл алғайсың аманатыммм</p>
+    <p>Жүрегім мен өмірімді тек саған арнаймын балапанымм. Мен сені сен ойлағаннан да қатты жақсы көремін жалғызымм, и саған соны көрсетіп жүргім келедіі. Сүйіктімм сенің аман есен жүргеніңді тілеймін. Жұмысыңда сүрінбей көп жетістіктерге жетуіңді тілеймін, өмір жолында көптеген жақсы адамдарды кездестіріп және айналаңдағы адамдардан шексіз жылулық келуін тілеймін Алладан ғашығыыммм. Ең басты дұғам ол екеуміздің бірге тату-тәтті бақытты болуымыз жалғызыммм.</p>
+    <p>Аманатыммм оянғаныңда бұл хатым жүрегіңе кіттей болсын қуаныш алып келе алады деп үміттенемін. Аллаһым таңынды берекелі және жақсы энергияға толы етсін жалғызымммм</p>
+    <p class="end"><span>❤️❤️❤️❤️❤️❤️</span></p>
+  </div>
+  <button id="kiss">Поцелуй 💋</button>
+</section>
+
+<script>
+// ⚙️ ЖАУАПТАР: құпиясөз ретінде қабылданатын жауаптар (кіші әріппен жаз)
+var ANSWERS=["ермухаммед"];
+var $=function(s){return document.querySelector(s)};
+var sky=$("#sky");
+
+// жұлдыздар
+for(var i=0;i<45;i++){var s=document.createElement("div");s.className="star";
+  s.style.left=Math.random()*100+"%";s.style.top=Math.random()*100+"%";
+  s.style.animationDelay=Math.random()*3+"s";sky.appendChild(s)}
+// ұшатын жүректер
+setInterval(function(){var f=document.createElement("div");f.className="fl";
+  f.textContent=["💙","🤍","✨","🩵"][Math.floor(Math.random()*4)];
+  f.style.left=Math.random()*100+"%";f.style.fontSize=(14+Math.random()*18)+"px";
+  f.style.animationDuration=(9+Math.random()*7)+"s";sky.appendChild(f);
+  setTimeout(function(){f.remove()},17000)},900);
+
+// музыка (Web Audio, жұмсақ музыкалық қорап)
+var ctx,master,timer,playing=false,step=0,next=0;
+var CH=[[43,50,55,59],[40,47,52,59],[48,52,55,60],[50,54,57,62]];
+
+var MEL=[[74,0,79,0,83,0],[81,0,79,0,76,0],[76,0,79,0,84,0],[83,0,81,0,78,0],[79,0,83,0,86,0],[84,0,83,0,79,0],[81,0,79,0,76,0],[78,0,81,0,79,0]];
+function hz(m){return 440*Math.pow(2,(m-69)/12)}
+function note(m,t,type,vol,dur){var o=ctx.createOscillator(),g=ctx.createGain();
+  o.type=type;o.frequency.value=hz(m);g.gain.setValueAtTime(0.0001,t);
+  g.gain.exponentialRampToValueAtTime(vol,t+.02);g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+  o.connect(g);g.connect(master);o.start(t);o.stop(t+dur+.05)}
+function sched(){var D=.36;
+  while(next<ctx.currentTime+.4){var bar=Math.floor(step/6)%8,k=step%6;
+    if(k===2||k===4)note(CH[bar%4][k===2?2:3],next,"triangle",.06,1.3);
+    if(k===0)note(CH[bar%4][0],next,"sine",.1,2.2);
+    var mm=MEL[bar][k];if(mm){note(mm,next,"sine",.1,1.8);note(mm+12,next,"sine",.025,1.1)}
+    next+=D;step++}}
+function startMusic(){
+  try{ctx=new (window.AudioContext||window.webkitAudioContext)();
+    master=ctx.createGain();master.gain.value=.0001;
+    var d=ctx.createDelay(1),fb=ctx.createGain(),lp=ctx.createBiquadFilter();
+    d.delayTime.value=.38;fb.gain.value=.38;lp.type="lowpass";lp.frequency.value=2400;
+    master.connect(ctx.destination);master.connect(d);d.connect(lp);lp.connect(fb);fb.connect(d);lp.connect(ctx.destination);
+    master.gain.exponentialRampToValueAtTime(.8,ctx.currentTime+3);
+    next=ctx.currentTime+.1;timer=setInterval(sched,100);playing=true;
+    $("#snd").classList.remove("hidden")}catch(e){}}
+$("#snd").onclick=function(){if(!ctx)return;
+  if(playing){ctx.suspend();playing=false;this.textContent="🔇"}else{ctx.resume();playing=true;this.textContent="🎵"}};
+
+// кіру
+function norm(s){return s.trim().toLowerCase()}
+function enter(){
+  if(ANSWERS.indexOf(norm($("#ans").value))>-1){
+    startMusic();
+    $("#gate").classList.add("hidden");$("#letter").classList.remove("hidden");window.scrollTo(0,0);
+    document.querySelectorAll(".paper p").forEach(function(p,i){setTimeout(function(){p.classList.add("on")},1200+i*2000)});
+  }else{
+    $("#msg").textContent="Қате болды, қайта байқап көр 💙";
+    var c=$("#card");c.classList.remove("shake");void c.offsetWidth;c.classList.add("shake")}}
+$("#go").onclick=enter;
+$("#ans").addEventListener("keydown",function(e){if(e.key==="Enter")enter()});
+
+// поцелуйлар
+$("#kiss").onclick=function(){
+  for(var i=0;i<26;i++)(function(i){setTimeout(function(){
+    var k=document.createElement("div");k.className="k";k.textContent=["💋","💋","💋","💙","😘"][Math.floor(Math.random()*5)];
+    k.style.left=(Math.random()*92+2)+"%";k.style.fontSize=(26+Math.random()*34)+"px";
+    k.style.setProperty("--dx",(Math.random()*160-80)+"px");k.style.setProperty("--r",(Math.random()*80-40)+"deg");
+    k.style.animationDuration=(2.6+Math.random()*2)+"s";document.body.appendChild(k);
+    setTimeout(function(){k.remove()},5000)},i*70)})(i)};
+</script>
+</body>
+</html>
